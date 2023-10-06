@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 *{
     margin: 0;
-    padding:0;
-    font-family: 'poppins',sans-serif;   
+    padding: 0;
+    font-family: 'poppins',sans-serif;
 }
 section{
     display: flex;
@@ -10,14 +10,14 @@ section{
     align-items: center;
     min-height: 100vh;
     width: 100%;
-
-    background:url('https://i.pinimg.com/1200x/4c/cb/fb/4ccbfba5b8e2e770d6bf29f7a37e25e0.jpg') no-repeat;
-    background-position:center ;
+    
+    background: url('https://i.ytimg.com/vi/u-WTfP3WJc4/hqdefault.jpg?sqp=-oaymwE1CKgBEF5IVfKriqkDKAgBFQAAiEIYAXABwAEG8AEB-AG-B4AC0AWKAgwIABABGHIgSigwMA8=&rs=AOn4CLDVDj9DHlPlHRkldhijb3w8Vdo1qg')no-repeat;
+    background-position: center;
     background-size: cover;
 }
 .form-box{
     position: relative;
-    width: 400px ;
+    width: 400px;
     height: 450px;
     background: transparent;
     border: 2px solid rgba(255,255,255,0.5);
@@ -28,37 +28,32 @@ section{
     align-items: center;
 
 }
-
 h2{
     font-size: 2em;
-    color: white;
+    color: #fff;
     text-align: center;
 }
-
 .inputbox{
     position: relative;
-    margin: 30px 0 ;
+    margin: 30px 0;
     width: 310px;
     border-bottom: 2px solid #fff;
-
 }
-
-.inputbox label {
+.inputbox label{
     position: absolute;
-    top: 10px; /* Adjusted top position */
+    top: 50%;
     left: 5px;
-    transform: translateY(0%);
+    transform: translateY(-50%);
     color: #fff;
     font-size: 1em;
     pointer-events: none;
     transition: .5s;
 }
-
 input:focus ~ label,
-input:valid ~ label{
-    top:-5px;
+input:not(:placeholder-shown) ~ label{
+top: -5px;
 }
-.inputbox input{
+.inputbox input {
     width: 100%;
     height: 50px;
     background: transparent;
@@ -69,21 +64,23 @@ input:valid ~ label{
     color: #fff;
 }
 .inputbox ion-icon{
-position: absolute;
-right: 8px;
-color:#fff;
-font-size: 1.2em;
-top:20px;
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    top: 20px;
 }
 .forget{
-    margin: -15px 0 15px;
+    margin: -15px 0 15px ;
     font-size: .9em;
-    color : #fff;
+    color: #fff;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;  
 }
+
 .forget label input{
     margin-right: 3px;
+    
 }
 .forget label a{
     color: #fff;
@@ -96,6 +93,7 @@ button{
     width: 100%;
     height: 40px;
     border-radius: 40px;
+    background: #fff;
     border: none;
     outline: none;
     cursor: pointer;
@@ -104,14 +102,14 @@ button{
 }
 .register{
     font-size: .9em;
-    color:#fff;
+    color: #fff;
     text-align: center;
     margin: 25px 0 10px;
 }
 .register p a{
     text-decoration: none;
     color: #fff;
-    font-weight: 600 ;
+    font-weight: 600;
 }
 .register p a:hover{
     text-decoration: underline;

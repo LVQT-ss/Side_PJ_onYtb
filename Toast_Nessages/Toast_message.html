@@ -7,50 +7,116 @@
     <title>Document</title>
 </head>
 <body>
-<!--Sucess-->
-    <div class="toast">
+    <div id="toast">
+    </div> 
+
+<div>
+    <div onclick="showSuccessToast();" class="btn btn--success">Show sucess toast</div>
+    <div onclick="showErrorToast();" class="btn btn--danger">Show error toast</div>
+</div>
+
+
+<script>
+    //toast fuctiuon
+    function toast({
+        title='',
+        message='',
+        type='info',
+        duration= 3000
+
+    }) {
+        const main = document.getElementById('toast')
+        if(main){
+            const toast =document.createElement('div');
+            const icons = { 
+                success:'checkmark-circle-outline',
+                info:'bulb-outline',
+                warning:'alert-circle-outline',
+                error:'alert-outline'
+            };
+            const icon = icons[type]
+            const delay = (duration / 1000).toFixed(2);
+
+            toast.classList.add('toast',`toast--${type}`);
+
+            toast.style.animation=`slideInLeft ease 0.3s, fadeOut linear 1s ${delay}s forwards`;
+
+            toast.innerHTML=`
+            <div class="toast__icon">
+    <ion-icon name="${icon}"></ion-icon>
+    </div>
+
+    <div class="toast__body">
+    <h3 class="toast__title">${title}</h3>
+    <p class="toast__message">${message}</p>
+    </div>
+
+    <div class="toast__close">
+    <ion-icon name="close-outline"></ion-icon>
+    </div> 
+            `;
+            main.append(toast);
+            setTimeout(function(){
+                main.removeChild(toast);
+            },duration +1000);
+        }
+    }
+   
+   function showSuccessToast(){
+    toast({
+        title:'Thành Công',
+        message:'bluetooth have successfully connected',
+        type:'success',
+        duration: 5000
+    })
+   }
+   function showErrorToast(){
+    toast({
+        title:'Thất bại!',
+        message:'bluetooth failed to connected',
+        type:'error',
+        duration: 5000
+    })
+   }
+</script>
+
+    <!--
+        info
+    <div class="toast toast--info">
         <div class="toast__icon">
             <ion-icon name="checkmark-circle-outline"></ion-icon>
         </div>
         <div class="toast__body">
-            <h3 class="toast__title">Success</h3>
-            <p class="toast__message">Bluetooth have succesfully connected</p>
+            <h3 class="toast__title">Info</h3>
+            <p class="toast__message">Connected to SAMSUNG A22 device</p>
         </div>
-        <div class="toast__close"><ion-icon name="close-outline"></ion-icon></div>
+        <div class="toast__close"><ion-icon name="close-outline"></ion-icon></div>        
     </div>
-<!--Info-->
-<div class="toast">
-    <div class="toast__icon">
-        <ion-icon name="checkmark-circle-outline"></ion-icon>
+    warning
+    <div class="toast toast--warning">
+        <div class="toast__icon">
+            <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </div>
+        <div class="toast__body">
+            <h3 class="toast__title">Warning</h3>
+            <p class="toast__message">Bluetooth did not found any compatible device</p>
+        </div>
+        <div class="toast__close"><ion-icon name="close-outline"></ion-icon></div>        
     </div>
-    <div class="toast__body">
-        <h3 class="toast__title">Success</h3>
-        <p class="toast__message">Bluetooth have succesfully connected</p>
+    error
+    <div class="toast toast--error">
+        <div class="toast__icon">
+            <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </div>
+        <div class="toast__body">
+            <h3 class="toast__title">Error</h3>
+            <p class="toast__message">Bluetooth is MALFUNCTION</p>
+        </div>
+        <div class="toast__close"><ion-icon name="close-outline"></ion-icon></div>        
     </div>
-    <div class="toast__close"><ion-icon name="close-outline"></ion-icon></div>
-</div>
-<!--Warning-->
-<div class="toast">
-    <div class="toast__icon">
-        <ion-icon name="checkmark-circle-outline"></ion-icon>
-    </div>
-    <div class="toast__body">
-        <h3 class="toast__title">Success</h3>
-        <p class="toast__message">Bluetooth have succesfully connected</p>
-    </div>
-    <div class="toast__close"><ion-icon name="close-outline"></ion-icon></div>
-</div>
-<!--Error-->
-<div class="toast">
-    <div class="toast__icon">
-        <ion-icon name="checkmark-circle-outline"></ion-icon>
-    </div>
-    <div class="toast__body">
-        <h3 class="toast__title">Success</h3>
-        <p class="toast__message">Bluetooth have succesfully connected</p>
-    </div>
-    <div class="toast__close"><ion-icon name="close-outline"></ion-icon></div>
-</div>
+
+-->
+
 </body>
 </html>
 

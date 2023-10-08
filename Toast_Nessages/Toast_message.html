@@ -27,7 +27,19 @@
     }) {
         const main = document.getElementById('toast')
         if(main){
+            //auto remove toast
+        const autoRemoveId=    setTimeout(function(){
+                main.removeChild(toast);
+            },duration +1000);
+            //remove toast when click
             const toast =document.createElement('div');
+            toast.onclick=function(e){
+               if(e.target.closest('.toast__close')) {
+                main.removeChild(toast);
+                clearTimeout(autoRemoveId);
+               }
+            }
+
             const icons = { 
                 success:'checkmark-circle-outline',
                 info:'bulb-outline',
@@ -56,9 +68,7 @@
     </div> 
             `;
             main.append(toast);
-            setTimeout(function(){
-                main.removeChild(toast);
-            },duration +1000);
+
         }
     }
    

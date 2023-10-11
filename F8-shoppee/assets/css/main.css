@@ -7,6 +7,7 @@
     justify-content: space-between;
 }
 .header__navbar-list{
+    margin-top: 4px;
     list-style: none;
     padding-left: 0;
 }
@@ -24,6 +25,11 @@
     text-decoration: none;
     font-weight: 300;
 }
+
+.header__navbar-item:hover,
+.header__navbar-item-link:hover{
+    color: rgba(255,255,255,0.7);
+}
 .header__navbar-item--separate {
     position: relative;
   }
@@ -37,5 +43,9 @@
     right: -9px;
     top: 50%;
     transform: translateY(-50%);
+  }
+  .header__navbar-icon-link{
+    color: var(--white-color);
+    text-decoration: none;
   }
   

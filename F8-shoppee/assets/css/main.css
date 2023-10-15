@@ -376,13 +376,16 @@ text-align: center;
     color: var(--white-color);
     margin-top: 6px;
 }
+.header__search-input-wrap{
+
+}
 .header__search-input{
     flex:1;
     height: 100%;
     border: none;
     outline: none;
     font-size: 1.4rem;
-    color: var(--white-color);
+    color: var(--text-color);
     padding: 0 16px;
     border-radius: 3px;
 }

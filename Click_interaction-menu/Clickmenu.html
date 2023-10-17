@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Clickmenu.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="list-container">
+        <button class="menu-button" aria-label="Menu Button">
+            <div class="menu-icon-wrapper">
+                <div class="menu-icon-line half first"></div>
+                <div class="menu-icon-line"></div>
+                <div class="menu-icon-line half last"></div>
+            </div>
+        </button>
+        <ul class="menu-button-list">
+            <li class="menu-button-list-item">
+                <span>Setting</span>
+            </li>
+            <li class="menu-button-list-item">
+                <span>Copy</span>
+            </li>
+            <li class="menu-button-list-item">
+                <span>Share</span>
+            </li>
+            <li class="menu-button-list-item">
+                <span>Delete</span>
+            </li>
+        </ul>
+    </div>
+    <script>
+        document.querySelector('.menu-button').addEventListener('click',function (){
+            document.querySelector('.list-container').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

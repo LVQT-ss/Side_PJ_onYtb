@@ -158,7 +158,7 @@ button{
     .usefull-link{
         width: 50px;
         position: unset;
-        display: flex;
+        display: flex; 
     }
     .menu{
         width: 18px;
